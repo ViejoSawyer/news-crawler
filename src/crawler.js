@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 
 async function getNews() {
   const $ = await request({
-    uri: 'https://news.ycombinator.com/',
+    uri: 'https://cors-anywhere.herokuapp.com/https://news.ycombinator.com',
     transform: (tbody) => cheerio.load(tbody),
   });
   const news = [];
