@@ -25,7 +25,6 @@ class News extends React.Component {
 
     try {
       const data = await crawler.news.list();
-      console.log(data);
       this.setState({ loading: false, data: data });
     } catch (error) {
       this.setState({ loading: false, error: error });

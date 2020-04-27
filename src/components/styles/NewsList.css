@@ -17,3 +17,14 @@
   width: 80px;
   height: 80px;
 }
+
+.News__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a:link {
+  color: #000000;
+  text-decoration: none;
+}

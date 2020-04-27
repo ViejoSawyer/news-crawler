@@ -8,7 +8,14 @@ class NewsListItem extends React.Component {
       <div className='NewsListItem'>
         <div>
           <strong>
-            {this.props.n.rank}. {this.props.n.title}
+            {this.props.n.rank}.{' '}
+            <a
+              href={this.props.n.url}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {this.props.n.title}
+            </a>
           </strong>
           <br />
           Points {this.props.n.points} | Comments {this.props.n.comments}
@@ -170,6 +177,9 @@ function NewsList(props) {
             <strong>No filter</strong>
           </label>
         </div>
+      </div>
+      <div className='News__container'>
+        <strong>News feed</strong>
       </div>
       <ul className='list-unstyled'>
         {filteredNews.map((n) => {

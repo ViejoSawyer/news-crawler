@@ -11,6 +11,7 @@ async function getNews() {
     const elementOfNews = {
       rank: getNumber($(el).children().find('span.rank').text()),
       title: $(el).children().find('a.storylink').text(),
+      url: $(el).children().find('a.storylink').attr('href'),
       points: getNumber($(el).next().children().find('span.score').text()),
       comments: getNumber($(el).next().children().find('a').last().text()),
     };
