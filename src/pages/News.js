@@ -24,7 +24,9 @@ class News extends React.Component {
     this.setState({ loading: true, error: null });
 
     try {
-      const data = await crawler.news.list();
+      const data = await crawler.news.list(
+        'https://cors-anywhere.herokuapp.com/https://news.ycombinator.com'
+      );
       this.setState({ loading: false, data: data });
     } catch (error) {
       this.setState({ loading: false, error: error });
