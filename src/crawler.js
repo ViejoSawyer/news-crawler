@@ -1,9 +1,10 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-async function getNews() {
+async function getNews(uri) {
   const $ = await request({
-    uri: 'https://cors-anywhere.herokuapp.com/https://news.ycombinator.com',
+    // uri: 'https://cors-anywhere.herokuapp.com/https://news.ycombinator.com',
+    uri: uri,
     transform: (tbody) => cheerio.load(tbody),
   });
   const news = [];
@@ -27,8 +28,8 @@ function getNumber(str) {
 
 const crawler = {
   news: {
-    list() {
-      return getNews();
+    list(uri) {
+      return getNews(uri);
     },
   },
 };
